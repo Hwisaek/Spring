@@ -1,5 +1,7 @@
 package org.zerock.persistence;
 
+import javax.sql.DataSource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class TimeMapperTest {
 
-	@Setter(onMethod = @__({ @Autowired }))
+	@Setter(onMethod_ = @Autowired)
 	private TimeMapper timeMapper;
 
 	@Test

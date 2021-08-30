@@ -16,7 +16,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class SampleTests {
 
-	@Setter(onMethod = @__({ @Autowired }))
+	@Setter(onMethod_ = @Autowired)
 	private Restaurant restaurant;
 
 	@Test

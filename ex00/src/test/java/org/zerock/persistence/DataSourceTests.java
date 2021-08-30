@@ -22,10 +22,10 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class DataSourceTests {
 
-	@Setter(onMethod = @__({ @Autowired }))
+	@Setter(onMethod_ = @Autowired)
 	private DataSource dataSource;
 
-	@Setter(onMethod = @__({ @Autowired }))
+	@Setter(onMethod_ = @Autowired)
 	private SqlSessionFactory sqlSessionFactory;
 
 	@Test

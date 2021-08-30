@@ -2,6 +2,8 @@ package org.zerock.sample;
 
 import static org.junit.Assert.assertNotNull;
 
+import javax.sql.DataSource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class HotelTests {
 
-	@Setter(onMethod = @__({ @Autowired }))
+	@Setter(onMethod_ = @Autowired)
 	private SampleHotel hotel;
 
 	@Test
