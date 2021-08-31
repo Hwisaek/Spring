@@ -23,4 +23,6 @@
 hs_err_pid*
 /.metadata/
 ex00/target/
+ex02/target/
 jex00/target/
+jex02/target/
