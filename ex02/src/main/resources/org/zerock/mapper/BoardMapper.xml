@@ -24,4 +24,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (#{bno}, #{title}, #{content}, #{writer})
 	</insert>
 
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		SELECT * FROM tbl_board WHERE bno = #{bno}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM tbl_board WHERE BNO = #{bno}
+	</delete>
+	
+	<update id="update">
+		UPDATE
+			tbl_board
+		SET
+			  title = #{title}
+			, content = #{content}
+			, writer = #{writer}
+			, updateDate = SYSDATE
+		WHERE
+			 bno = #{bno}
+	</update>
 </mapper>
