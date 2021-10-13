@@ -31,14 +31,14 @@ public class BoardControllerTests {
 
 	@Setter(onMethod_ = @Autowired)
 	private WebApplicationContext ctx;
-	
+
 	private MockMvc mockMvc;
-	
+
 	@Before
 	public void setup() {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
-	
+
 //	@Test
 //	public void testList() throws Exception{
 //		
@@ -49,7 +49,17 @@ public class BoardControllerTests {
 //				.getModelMap());
 //		
 //	}
-//	
+	
+	@Test
+	public void testListPaging() throws Exception{
+		
+		log.info(mockMvc.perform(
+				MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum", "2")
+				.param("amount", "50"))
+				.andReturn().getModelAndView().getModelMap());
+	}
+
 //	@Test
 //	public void testRegister() throws Exception{
 //		
@@ -61,7 +71,7 @@ public class BoardControllerTests {
 //		
 //		log.info(resultPage);
 //	}
-//	
+
 //	@Test
 //	public void testGet() throws Exception{
 //		
@@ -72,7 +82,7 @@ public class BoardControllerTests {
 //				.getModelAndView().getModelMap());
 //		
 //	}
-//	
+
 //	@Test
 //	public void testModify() throws Exception{
 //		
@@ -87,16 +97,16 @@ public class BoardControllerTests {
 //		
 //		log.info(resultPage);
 //	}
-	
-	@Test
-	public void testRemove() throws Exception{
-		// 삭제 전 데이터베이스에 게시물 번호 확인할 것
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders
-				.post("/board/remove")
-				.param("bno", "8"))
-				.andReturn()
-				.getModelAndView().getViewName();
-		
-		log.info(resultPage);
-	}
+
+//	@Test
+//	public void testRemove() throws Exception{
+//		// 삭제 전 데이터베이스에 게시물 번호 확인할 것
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders
+//				.post("/board/remove")
+//				.param("bno", "8"))
+//				.andReturn()
+//				.getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//	}
 }
